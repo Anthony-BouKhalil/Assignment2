@@ -3,4 +3,5 @@ python:
           - "3.7"
 cache: pip
 install: "pip install -r requirements.txt"
-script: python test_sum_unittest.py
+script: coverage run test_sum_unittest.py
+#after_success: bash <(curl -s https://codecov.io/bash)
