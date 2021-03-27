@@ -3,7 +3,7 @@ python:
           - "3.7"
 cache: pip
 install: "pip install -r requirements.txt"
-script: coverage run test_sum_unittest.py
+script: coverage run unittest.py
 after_success:  
         - export CODECOV_TOKEN="token"
         - bash <(curl -s https://codecov.io/bash)
