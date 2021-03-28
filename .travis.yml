@@ -1,4 +1,3 @@
-sudo: required
 language: python
 python:
           - "3.7"
@@ -9,7 +8,7 @@ cache: pip
 install: "pip install -r requirements.txt"
 script: 
         - coverage run test.py
-        - docker build -t html-server-image:v1 .
+        - docker image build -t html-server-image:v1 .
 codecov:
   token: c3f276c2-798d-44ef-adce-c92dfb517280
 after_success:  
