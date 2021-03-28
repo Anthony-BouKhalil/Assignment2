@@ -5,6 +5,6 @@ cache: pip
 install: "pip install -r requirements.txt"
 script: coverage run test.py
 after_success:  
-        - export CODECOV_TOKEN="token"
+        - export CODECOV_TOKEN="c3f276c2-798d-44ef-adce-c92dfb517280"
         - bash <(curl -s https://codecov.io/bash)
         
