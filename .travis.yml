@@ -23,9 +23,11 @@ after_success:
 deploy:
   provider: elasticbeanstalk
   region: "us-east-1"
-  app: "Assignment2-Ver3"
-  env: "Assignment2ver3-env"
-  bucket_name: "elasticbeanstalk-us-east-1"
+  app: "Assignment2"
+  env: "Assignment2-env"
+  bucket_name: "elasticbeanstalk-us-east-1-127998730592"
+  on:
+    branch: master
   access_key_id: $AWS_ACCESS_KEY
   secret_access_key: $AWS_SECRET_KEY
   
