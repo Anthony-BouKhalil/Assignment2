@@ -21,12 +21,12 @@ after_success:
         
         
 deploy:
-  skip_cleanup: true
   provider: elasticbeanstalk
   region: "us-east-1"
   app: "Assignment2"
   env: "Assignment2-env"
   bucket_name: "elasticbeanstalk-us-east-1-127998730592"
+  skip_cleanup: true
   on:
     branch: master
   access_key_id: $AWS_ACCESS_KEY
