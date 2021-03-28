@@ -1,14 +1,23 @@
+sudo: required
 language: python
 python:
           - "3.7"
+services:
+          - docker
+          
 cache: pip
 install: "pip install -r requirements.txt"
-script: coverage run test.py
+script: 
+        - coverage run test.py
+        - docker image build -t anthony77/assignment2
 codecov:
   token: c3f276c2-798d-44ef-adce-c92dfb517280
 after_success:  
-        - bash <(curl -s https://codecov.io/bash)
+        #log in to docker CLI
+        - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
+        #take built images and push to DOcker hub
         - docker push anthony77/assignment2
+        #test
         
 deploy:
   provider: elasticbeanstalk
