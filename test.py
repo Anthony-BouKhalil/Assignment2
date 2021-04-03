@@ -9,7 +9,7 @@ class TestSum(unittest.TestCase):
         statuscode = response.status_code
         self.assertEqual(statuscode, 200)
         
-    def test_response1(self):
+    def test_response2(self):
         tester = app.test_client(self)
         response = tester.get('/yes')
         statuscode = response.status_code
