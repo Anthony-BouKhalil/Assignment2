@@ -2,11 +2,11 @@ import unittest
 
 class TestSum(unittest.TestCase):
     
-    def test_sum(self):
-        self.assertEqual(sum([1, 2, 3]), 6, "Should be 6")
-
-    def test_sum_tuple(self):
-        self.assertEqual(sum((1, 2, 2)), 5, "Should be 5")
+    def test_response1(self):
+        tester = app.test_client(self)
+        response = tester.get('/')
+        statuscode = response.status_code
+        self.assertEqual(statuscode, 200)
 
 if __name__ == '__main__':
         unittest.main()
