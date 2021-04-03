@@ -13,6 +13,7 @@ script:
 codecov:
   token: 58367684-1ee4-404d-9f86-dadd0ac7fd14
 after_success:  
+        - bash <(curl -s https://codecov.io/bash)
         #log in to docker CLI
         - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
         #take built images and push to DOcker hub
